@@ -1,5 +1,6 @@
 package com.example.arcega.ranierdave.block1.p1.quiz
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
@@ -36,10 +37,16 @@ class MainActivity : AppCompatActivity() {
             val insertedEmail = loginEmail.text.toString()
             val insertedPass = loginPassword.text.toString()
 
-            if (TextUtils.isEmpty(insertedEmail) || TextUtils.isEmpty(insertedPass)) {
-                Toast.makeText(this, "Add Email & Password!", Toast.LENGTH_SHORT).show()
+            if (insertedEmail == insertedPass) {
+                Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this@MainActivity, HomePageActivity::class.java)
+
+            } else if (TextUtils.isEmpty(insertedEmail) || TextUtils.isEmpty(insertedPass)) {
+            Toast.makeText(this, "Add Email & Password!", Toast.LENGTH_SHORT).show()
+
             } else {
-                Toast.makeText(this, "Wrong Credentials!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Wrong Credentials!", Toast.LENGTH_SHORT).show()
+
             }
         }
     }
