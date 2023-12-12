@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
             if (insertedEmail == insertedPass) {
                 Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this@MainActivity, HomePageActivity::class.java)
+                startActivity(intent)
 
             } else if (TextUtils.isEmpty(insertedEmail) || TextUtils.isEmpty(insertedPass)) {
             Toast.makeText(this, "Add Email & Password!", Toast.LENGTH_SHORT).show()
